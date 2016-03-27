@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=myProgram
+Comment=This is my first desktop entry program
+Exec=/home/jaafar/Desktop/boot-script.sh
+Icon=/home/jaafar/Downloads/icon.png
+Terminal=false # Describes whether application should run in a terminal.
+Type=Application
+Categories=Utility;Application;
+

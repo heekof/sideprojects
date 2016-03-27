@@ -1,0 +1,16 @@
+sudo apt-get install virtualbox-guest-utils
+ git push -f origin master
+RSA key "one more time for luck"
+source bin/activate ~/anaconda2/
+ ipython notebook
+
+To get Hibernation
+        sudo pm-hibernate
+To get Suspend
+        sudo pm-suspend
+
+git push -f
+
+# In the name of the file put metric name and UNIX time
+$GOPATH/bin/prom2json  http://192.168.50.1:7071/metrics | jq '.[]|select(.name=="http_requests_total")' 
+
