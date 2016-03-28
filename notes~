@@ -9,7 +9,48 @@ To get Hibernation
 To get Suspend
         sudo pm-suspend
 
+
+--------------------------------------
+Install go : https://golang.org/doc/install
+Install prom2json
+Install jq
+
+# In the name of the file put metric name and UNIX time
+$GOPATH/bin/prom2json  http://192.168.50.1:7071/metrics | jq '.[]|select(.name=="http_requests_total")' 
+
+http://192.168.50.1:7070/api/v1/query?query=up{job="node"}[1000m]&time=2016-03-26T16:22:51.781Z
+
+----------------------------------
 git push -f
 
-$GOPATH/bin/prom2json  http://192.168.50.1:7071/metrics | jq '.[]|select(.name=="http_requests_total")' 
+
+
+--------------------------------
+Quick setup — if you’ve done this kind of thing before
+or
+
+We recommend every repository include a README, LICENSE, and .gitignore.
+…or create a new repository on the command line
+
+echo "# sideprojects" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/heekof/sideprojects.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/heekof/sideprojects.git
+git push -u origin master
+
+…or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+-------------------------
+
+
+
+
+
 
