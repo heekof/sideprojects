@@ -1,0 +1,17 @@
+Author @ jaafar
+22/04/2016
+Ubuntu x86_64 14.04
+
+ 31  echo 'export PS1="\u@monasca \$ "' >> ~/.bashrc 
+   32  clear
+   33  vagrant --version
+   34  sudo apt-get install -y virtualbox 
+   35  wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
+   36  dpkg -i vagrant_1.8.1_x86_64.deb 
+   37  sudo dpkg -i vagrant_1.8.1_x86_64.deb 
+   
+   sudo apt-get update
+sudo apt-get upgrade -y
+sudo reboot
+
+monasca port : 8090 
