@@ -59,6 +59,46 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 
 
+$ ssh -i Downloads/jaafar.pem ubuntu@157.159.232.218
 
+echo 'export PS1="\u@monasca \$ "' >> ~/.bashrc
 
+FORCE=yes ./stack.sh 
 
+https://pypi.python.org/pypi/ansible/1.9.4
+python setup.py install
+
+----------------------------------
+
+As root:
+
+xhost local:yourusername
+
+Where yourusername is your user name :)
+
+Then do su as your user xclock should work if it's installed
+-----------------------------
+
+sudo usermod -a -G jaafar ansible
+
+----- when vagrant problem
+sudo modprobe vboxnetadp
+
+------------------------
+
+nano ~/.ssh/config : 
+
+Host devstack
+HostName 157.159.232.174
+User ubuntu
+Port 22
+IdentityFile ~/Downloads/jaafar.pem
+
+more : http://manpages.ubuntu.com/manpages/xenial/en/man5/ssh_config.5.html
+------------------------
+
+# apt-get --reinstall install language-pack-es
+# apt-get --reinstall install language-pack-kde-es
+
+-----------------
+git config --global --unset http.proxy

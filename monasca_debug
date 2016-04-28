@@ -1,0 +1,52 @@
+PLAY [Define default alarms] ************************************************** 
+
+TASK: [monasca-default-alarms | Setup default notification method] ************ 
+failed: [mini-mon] => {"failed": true, "parsed": false}
+Traceback (most recent call last):
+  File "/home/ubuntu/.ansible/tmp/ansible-tmp-1461846109.6-83906321198594/monasca_notification_method", line 1822, in <module>
+    main()
+  File "/home/ubuntu/.ansible/tmp/ansible-tmp-1461846109.6-83906321198594/monasca_notification_method", line 1817, in main
+    notification = MonascaNotification(module)
+  File "/home/ubuntu/.ansible/tmp/ansible-tmp-1461846109.6-83906321198594/monasca_notification_method", line 1734, in __init__
+    self._keystone_auth()
+  File "/home/ubuntu/.ansible/tmp/ansible-tmp-1461846109.6-83906321198594/monasca_notification_method", line 1751, in _keystone_auth
+    project_name=self.module.params['keystone_project'])
+  File "/opt/monasca/lib/python2.7/site-packages/monascaclient/ksclient.py", line 69, in __init__
+    self._keystone = client.Client(**kc_args)
+  File "/opt/monasca/lib/python2.7/site-packages/keystoneclient/v3/client.py", line 226, in __init__
+    self.authenticate()
+  File "/opt/monasca/lib/python2.7/site-packages/positional/__init__.py", line 101, in inner
+    return wrapped(*args, **kwargs)
+  File "/opt/monasca/lib/python2.7/site-packages/keystoneclient/httpclient.py", line 584, in authenticate
+    resp = self.get_raw_token_from_identity_service(**kwargs)
+  File "/opt/monasca/lib/python2.7/site-packages/keystoneclient/v3/client.py", line 301, in get_raw_token_from_identity_service
+    return plugin.get_auth_ref(self.session)
+  File "/opt/monasca/lib/python2.7/site-packages/keystoneclient/auth/identity/v3/base.py", line 190, in get_auth_ref
+    authenticated=False, log=False, **rkwargs)
+  File "/opt/monasca/lib/python2.7/site-packages/keystoneclient/session.py", line 520, in post
+    return self.request(url, 'POST', **kwargs)
+  File "/opt/monasca/lib/python2.7/site-packages/positional/__init__.py", line 101, in inner
+    return wrapped(*args, **kwargs)
+  File "/opt/monasca/lib/python2.7/site-packages/keystoneclient/session.py", line 420, in request
+    raise exceptions.from_response(resp, method, url)
+keystoneauth1.exceptions.http.Unauthorized: The request you have made requires authentication. (HTTP 401) (Request-ID: req-d60b961c-3c25-427c-8fef-de36720a85a2)
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /home/jaafar/.ssh/config
+debug1: /home/jaafar/.ssh/config line 7: Applying options for mini-mon
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Hostname has changed; re-reading configuration
+debug1: Reading configuration data /home/jaafar/.ssh/config
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: mux_client_request_session: master session id: 2
+Shared connection to 157.159.232.217 closed.
+
+
+FATAL: all hosts have already failed -- aborting
+
+PLAY RECAP ******************************************************************** 
+           to retry, use: --limit @/home/jaafar/mini-mon.retry
+
+mini-mon                   : ok=168  changed=19   unreachable=0    failed=1 
