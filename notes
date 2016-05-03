@@ -100,8 +100,9 @@ more : http://manpages.ubuntu.com/manpages/xenial/en/man5/ssh_config.5.html
 # apt-get --reinstall install language-pack-en
 # apt-get --reinstall install language-pack-kde-en
 
-# apt-get --reinstall install language-pack-fr
-# apt-get --reinstall install language-pack-kde-fr
+# apt-get --reinstall install -y language-pack-fr
+# apt-get --reinstall install -y language-pack-kde-fr
+sudo apt-get --reinstall install -y language-pack-fr && sudo apt-get --reinstall install -y language-pack-kde-fr && sudo apt-get --reinstall install -y language-pack-en && sudo apt-get --reinstall install -y language-pack-kde-en
 -----------------
 git config --global --unset http.proxy
 
@@ -172,3 +173,9 @@ network error in openstack
 route -n
 sudo route del -net 172.24.4.0 gw 0.0.0.0 netmask 255.255.255.224 dev br-ex
 sudo route add -net 10.0.0.0/24 gw 172.24.4.1
+
+
+-----------
+
+scripts are procedurale
+yaml is declarative

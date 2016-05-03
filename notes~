@@ -20,6 +20,14 @@ $GOPATH/bin/prom2json  http://192.168.50.1:7071/metrics | jq '.[]|select(.name==
 
 http://192.168.50.1:7070/api/v1/query?query=up{job="node"}[1000m]&time=2016-03-26T16:22:51.781Z
 
+FInal solution
+
+https://github.com/prometheus/prometheus_cli
+
+./prometheus_cli-master -csv=true -server="http://192.168.50.1:7070"   query_range node_network_transmit_packets 1459178285 1500 > file1
+
+
+
 ----------------------------------
 git push -f
 
@@ -51,6 +59,23 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 
 
+$ ssh -i Downloads/jaafar.pem ubuntu@157.159.232.218
 
+echo 'export PS1="\u@monasca \$ "' >> ~/.bashrc
 
+FORCE=yes ./stack.sh 
+
+https://pypi.python.org/pypi/ansible/1.9.4
+python setup.py install
+
+----------------------------------
+
+As root:
+
+xhost local:yourusername
+
+Where yourusername is your user name :)
+
+Then do su as your user xclock should work if it's installed
+-----------------------------
 
