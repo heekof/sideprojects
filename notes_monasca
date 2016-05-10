@@ -1,0 +1,42 @@
+Metric Name 	Dimensions 	Semantics
+cpu.idle_perc 		Percentage of time the CPU is idle when no I/O requests are in progress
+cpu.wait_perc 		Percentage of time the CPU is idle AND there is at least one I/O request in progress
+cpu.stolen_perc 		Percentage of stolen CPU time, i.e. the time spent in other OS contexts when running in a virtualized environment
+cpu.system_perc 		Percentage of time the CPU is used at the system level
+cpu.user_perc 		Percentage of time the CPU is used at the user level
+cpu.total_logical_cores 		Total number of logical cores available for an entire node (Includes hyper threading). NOTE: This is an optional metric that is only sent when send_rollup_stats is set to true.
+disk.inode_used_perc 	device, mount_point 	The percentage of inodes that are used on a device
+disk.space_used_perc 	device, mount_point 	The percentage of disk space that is being used on a device
+disk.total_space_mb 		The total amount of disk space aggregated across all the disks on a particular node. NOTE: This is an optional metric that is only sent when send_rollup_stats is set to true.
+disk.total_used_space_mb 		The total amount of used disk space aggregated across all the disks on a particular node. NOTE: This is an optional metric that is only sent when send_rollup_stats is set to true.
+io.read_kbytes_sec 	device 	Kbytes/sec read by an io device
+io.read_req_sec 	device 	Number of read requests/sec to an io device
+io.read_time_sec 	device 	Amount of read time/sec to an io device
+io.write_kbytes_sec 	device 	Kbytes/sec written by an io device
+io.write_req_sec 	device 	Number of write requests/sec to an io device
+io.write_time_sec 	device 	Amount of write time/sec to an io device
+load.avg_1_min 		The average system load over a 1 minute period
+load.avg_5_min 		The average system load over a 5 minute period
+load.avg_15_min 		The average system load over a 15 minute period
+mem.free_mb 		Megabytes of free memory
+mem.swap_free_perc 		Percentage of free swap memory that is free
+mem.swap_free_mb 		Megabytes of free swap memory that is free
+mem.swap_total_mb 		Megabytes of total physical swap memory
+mem.swap_used_mb 		Megabytes of total swap memory used
+mem.total_mb 		Total megabytes of memory
+mem.usable_mb 		Total megabytes of usable memory
+mem.usable_perc 		Percentage of total memory that is usable
+mem.used_buffers 		Number of buffers being used by the kernel for block io
+mem.used_cached 		Memory used for the page cache
+mem.used_shared 		Memory shared between separate processes and typically used for inter-process communication
+net.in_bytes_sec 	device 	Number of network bytes received per second
+net.out_bytes_sec 	device 	Number of network bytes sent per second
+net.in_packets_sec 	device 	Number of network packets received per second
+net.out_packets_sec 	device 	Number of network packets sent per second
+net.in_errors_sec 	device 	Number of network errors on incoming network traffic per second
+net.out_errors_sec 	device 	Number of network errors on outgoing network traffic per second
+net.in_packets_dropped_sec 	device 	Number of inbound network packets dropped per second
+net.out_packets_dropped_sec 	device 	Number of inbound network packets dropped per second
+monasca.thread_count 	service=monitoring component=monasca-agent 	Number of threads that the collector is consuming for this collection run
+monasca.emit_time_sec 	service=monitoring component=monasca-agent 	Amount of time that the forwarder took to send metrics to the Monasca API.
+monasca.collection_time_sec 	service=monitoring component=monasca-agent 	Amount of time that the collector took for this collection run

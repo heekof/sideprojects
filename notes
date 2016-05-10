@@ -139,17 +139,23 @@ sed s/Port/jaafar/ text.txt > text2
 
 ---------
 #!/bin/bash
+# Il faut mettre les identifiants de l'admin
 
-$( export OS_PROJECT_ID=d0429653c9064737b853c57b5f11ef3f )
-$( export OS_PROJECT_NAME=admin )
-$( export OS_PASSWORD=supersecret )
-$( export OS_AUTH_URL=http://192.168.1.44:5000/ )
+export OS_PROJECT_NAME=mini-mon
+
+export OS_PROJECT_ID=f2a5ae8dd2534e2781787375db0a142f
+export OS_PASSWORD=supersecret
+export OS_AUTH_URL=http://157.159.232.218:5000/
+export OS_USERNAME=admin
 
 
 -----
 wget https://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img
-glance image-create --name='ubuntu' --visibility=public   --container-format=bare --disk-format=qcow2 < ubuntu-14.04-server-cloudimg-amd64-disk1.img
+glance image-create --name='ubuntu2' --visibility=public   --container-format=bare --disk-format=qcow2 < ubuntu-14.04-server-cloudimg-amd64-disk1.img
 
+
+----
+sudo monasca-setup --username mini-mon --password password --service monitoring --project_name mini-mon --keystone_url http://157.159.232.218:35357/v3 --monasca_url http://157.159.232.200:8080/v2.0 --overwrite
 ----
 delete manually all VMs
  http://stackoverflow.com/questions/22194965/openstack-can-not-delete-instance-from-dashboard
@@ -179,3 +185,30 @@ sudo route add -net 10.0.0.0/24 gw 172.24.4.1
 
 scripts are procedurale
 yaml is declarative
+
+------
+
+  sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+  sudo sysctl -w net.ipv4.ip_forward=1
+
+
+#list all nat rules:
+iptables -t nat --line-numbers -L
+
+#remove :
+  iptables -t nat -D POSTROUTING 6(line number)
+
+
+  ------- Docker technology -----
+
+  docker images
+docker run -d -p 80:80 -p 8080:8080 -p 5000:5000 --name monasca monasca/demo
+docker run 2e1528f3d9d8
+  docker run -i -t monasca/demo /bin/bash
+
+  -- remove docker
+
+  sudo apt-get remove docker*
+sudo apt-get autoremove
+sudo apt-get autoclean
+sudo rm -rf /var/www/discourse -R
