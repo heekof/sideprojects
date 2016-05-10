@@ -193,3 +193,32 @@ sudo iptables -t nat -A POSTROUTING -s 192.168.1.224/27 -o eth0 -j MASQUERADE
 
 
 Openstack is connected locally to the br-ex dev interface !!!
+
+
+
+--------
+
+
+
+
+In some releases sudo is configured in such a way that all environment variables all cleared when running the command. To keep the value for your http_proxy and fix this, you need to edit /etc/sudoers, run:
+
+visudo
+
+Then find a line that states:
+
+Defaults env_reset 
+
+and add after it:
+
+Defaults env_keep = "http_proxy ftp_proxy" 
+
+Things will start working as expected.
+
+Thanks to kdogksu in the Ubuntu Forums for finding the solution for this.
+
+In order to not only fix apt-get but also graphical X11 utils as e.g synaptic,mintintall, ...) the following line in /etc/sudoers should do the job :
+
+Defaults env_keep = "http_proxy https_proxy ftp_proxy DISPLAY XAUTHORITY"
+
+s : http://askubuntu.com/questions/7470/how-to-run-sudo-apt-get-update-through-proxy-in-commandline
