@@ -179,3 +179,8 @@ sudo route add -net 10.0.0.0/24 gw 172.24.4.1
 
 scripts are procedurale
 yaml is declarative
+
+------
+Gateway is not valid on subnet" when enabling Neutron in Devstack
+
+https://ask.openstack.org/en/question/51793/gateway-is-not-valid-on-subnet-when-enabling-neutron-in-devstack/
