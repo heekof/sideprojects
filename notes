@@ -184,3 +184,11 @@ yaml is declarative
 Gateway is not valid on subnet" when enabling Neutron in Devstack
 
 https://ask.openstack.org/en/question/51793/gateway-is-not-valid-on-subnet-when-enabling-neutron-in-devstack/
+
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+
+-------
+
+
+Openstack is connected locally to the br-ex dev interface !!!
