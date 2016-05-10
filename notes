@@ -185,7 +185,8 @@ Gateway is not valid on subnet" when enabling Neutron in Devstack
 
 https://ask.openstack.org/en/question/51793/gateway-is-not-valid-on-subnet-when-enabling-neutron-in-devstack/
 
-sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -s 192.168.1.224/27 -o eth0 -j MASQUERADE
 
 
 -------
