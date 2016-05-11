@@ -254,3 +254,11 @@ In order to not only fix apt-get but also graphical X11 utils as e.g synaptic,mi
 Defaults env_keep = "http_proxy https_proxy ftp_proxy DISPLAY XAUTHORITY"
 
 source : http://askubuntu.com/questions/7470/how-to-run-sudo-apt-get-update-through-proxy-in-commandline
+
+-------
+
+
+clear ; sudo iptables -t nat -L | grep MASQUERADE
+sudo iptables -t nat -I POSTROUTING 1 -s 192.168.1.224/27 -o eth0 -j MASQUERADE
+
+
