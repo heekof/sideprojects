@@ -262,3 +262,36 @@ clear ; sudo iptables -t nat -L | grep MASQUERADE
 sudo iptables -t nat -I POSTROUTING 1 -s 192.168.1.224/27 -o eth0 -j MASQUERADE
 
 
+
+
+
+
+proxy --------   
+
+
+
+/etc/apt/apt.conf.d/proxy :
+Acquire::http::Proxy "http://proxypac.si.francetelecom.fr:8080/";
+
+export http_proxy=http://proxypac.si.francetelecom.fr:8080
+
+export https_proxy=http://proxypac.si.francetelecom.fr:8080
+
+export HTTP_PROXY=http://proxypac.si.francetelecom.fr:8080
+
+export HTTPS_PROXY=http://proxypac.si.francetelecom.fr:8080
+
+export no_proxy=10.192.119.21,10.192.119.22,127.0.0.1
+
+
+check if port are open or closed
+nmap -p T:8080  10.192.119.22
+
+
+nameserver 10.192.64.254
+nameserver 10.192.65.254
+search rd.francetelecom.fr
+
+Dans visudo : Defaults        env_keep = "http_proxy https_proxy ftp_proxy"
+
+
