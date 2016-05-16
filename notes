@@ -294,4 +294,28 @@ search rd.francetelecom.fr
 
 Dans visudo : Defaults        env_keep = "http_proxy https_proxy ftp_proxy"
 
+---------------------------------
 
+Quelle galère ! Afin de compléter mon apprentissage de la sécurité informatique, j’ai voulu installer Metasploitable pour m’entraîner avec Metasploit & Co. Malheureusement, impossible de faire tourner Virtualbox sur le kernel spécifique d’OVH. Heureusement, je suis tombé sur un bon article que j’ai aussitôt voulu partager.
+On repasse sur un kernel Ubuntu
+
+    ╭─root@krustyhack ~  
+    ╰─➤ mkdir ~/ovh.d/
+    ╭─root@krustyhack ~  
+    ╰─➤ apt-get install linux-image-server
+    ╭─root@krustyhack ~  
+    ╰─➤ mv /etc/grub.d/06_OVHkernel ~/ovh.d
+    ╭─root@krustyhack ~  
+    ╰─➤ update-grub
+    ╭─root@krustyhack ~  
+    ╰─➤ apt-get install linux-headers-generic
+
+On redémarre
+
+    ╭─root@krustyhack ~  
+    ╰─➤ shutdown -r -f now
+
+On installe Virtualbox
+
+    ╭─root@krustyhack ~  
+    ╰─➤ apt-get install virtualbox
