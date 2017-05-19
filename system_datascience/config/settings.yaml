@@ -1,0 +1,24 @@
+SLA:
+  url: https://github.com/heekof/
+  user: donny
+  desc: This is a description*
+config:
+  conf_dir: "config/"
+  conf_file: "config.py"
+  #path: "../TNSM/data/Cleaned/"
+  path: "../Testing/"
+  log_dir: "log/"
+  log_file: "main.log"
+  chunksize: 1600
+  ext: '.csv'
+  limit: 20000
+data:
+  path: "data/"
+db:
+  host: http://mysql.example.com
+  user: lebowski
+repo: C:\Users\CQMQ6347\CloudStation\Main\Work\
+SLO:
+- slo1
+- slo2
+- slo3
